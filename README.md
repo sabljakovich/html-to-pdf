@@ -7,7 +7,7 @@ The examples bellow cover one of the most common use cases, returning the genera
 
 Express Web API using axios http client to communicate with the renderer service and sending the pdf back to the consumer.
 
-```
+```javascript
 
 const express = require('express');
 const app = express();
@@ -42,7 +42,7 @@ app.listen(3000);
 
 .NET core 3.1 example controller.
 
-```
+```csharp
     [Route("api/[controller]")]
     public class InvoicesController : Controller
     {
