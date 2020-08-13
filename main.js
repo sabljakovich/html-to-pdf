@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const puppeteer = require('puppeteer')
 
-const PORT = +process.env.SERVICE_PORT || 1234;
+const PORT = +process.env.PORT || 1234;
 const app = express()
 const logger = console
 
