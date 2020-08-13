@@ -1,0 +1,7 @@
+{
+    "name": "html-to-pdf",
+    "description": "Convert any HTML to a pdf",
+    "repository": "https://github.com/sabljakovich/html-to-pdf",
+    "keywords": ["pdf", "html", "render", "convert"],
+    "stack": "container"
+}

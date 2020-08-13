@@ -71,10 +71,15 @@ app.listen(3000);
 
 # How to deploy
 
-## Heroku
+## Heroku deploy with single click
+
+Deploy by clicking on the heroku button below.
 
 
-Deploy the service from source code with heroku.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
+## Heroku deploy from source code
 
 1. Clone the source code to your machine
 
