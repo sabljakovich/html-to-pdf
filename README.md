@@ -1,5 +1,5 @@
 
-## How to consume the API
+# How to consume the API
 
 The examples bellow cover one of the most common use cases, returning the generated pdf back via http.
 
@@ -67,6 +67,33 @@ app.listen(3000);
             );
         }
     }
+```
+
+# How to deploy
+
+## Heroku
+
+
+Deploy the service from source code with heroku.
+
+1. Clone the source code to your machine
+
+```sh
+git clone git@github.com:sabljakovich/html-to-pdf.git
+cd html-to-pdf
+
+```
+
+2. Create a new heroku up
+
+```sh
+heroku create
+```
+
+3. Let the heroku now the app is a docker container
+
+```sh
+heroku stack:set container
 ```
 
 ## Docker

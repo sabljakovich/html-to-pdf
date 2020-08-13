@@ -31,7 +31,6 @@ const run = async () => {
 
 run().then()
 
-
 app.get('/renderer/memory', async (req, res) => {
 
     const used = process.memoryUsage();
