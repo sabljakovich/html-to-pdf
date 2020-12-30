@@ -46,9 +46,25 @@ app.get('/renderer/memory', async (req, res) => {
 
 app.post('/renderer/html-to-pdf', async (req, res) => {
 
-    logger.info(`${new Date() } - Generating a new pdf`)
+    logger.info(`${new Date() } - Generating a new pdf with query params: `, req.query)
 
     const beginTimer = new Date();
+
+    const printConfiguration = {
+        printBackground: true
+    }
+
+    if(req.query.width) {
+        printConfiguration.width = req.query.width;
+    }
+    if(req.query.height) {
+        printConfiguration.height = req.query.height;
+    }
+    if(!printConfiguration.width && !printConfiguration.height) {
+        printConfiguration.format = req.query.format || 'A4';
+    }
+
+    logger.info(`Using printConfiguration: `, printConfiguration)
 
     try {
         const page = await browser.newPage();
@@ -57,7 +73,7 @@ app.post('/renderer/html-to-pdf', async (req, res) => {
         await page.emulateMedia('screen');
         page.setDefaultNavigationTimeout(0)
 
-        const pdf = await page.pdf({ format: 'A4', printBackground: true });
+        const pdf = await page.pdf(printConfiguration);
         await page.close();
 
         res.set('Content-Type', 'application/pdf');
